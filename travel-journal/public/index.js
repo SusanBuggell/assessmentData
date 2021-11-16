@@ -43,8 +43,7 @@ function getCities() {
                     <h2>${elem.city}, ${elem.country}</h2>
                     <h3>Rating: ${elem.rating}/5</h3>
                     <button onclick="deleteCard(${elem['city_id']})">Delete</button>
-                    </div>
-                `
+                    </div>`
 
                 countryList.innerHTML += countryCard
             })
@@ -56,7 +55,7 @@ function getCountries() {
         .then(res => {
             res.data.forEach(country => {
                 const option = document.createElement('option')
-                option.setAttribute('value', country['country_id'])
+                option.setAttribute('value', country.country_id)
                 option.textContent = country.name
                 countrySelect.appendChild(option)
             })
